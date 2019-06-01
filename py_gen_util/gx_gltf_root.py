@@ -321,7 +321,7 @@ class Gltf(schema.Gltf):
         self.scenes      = []           # self scenes (each contain nodes list)
         self.nodes       = []           # self nodes tree
         self.path        = file_path
-        self.buff        = json.loads(file(file_path, "r").read())
+        self.buff        = json.loads(open(file_path, "r").read())
         for i in self.buff:
             # print(i)
             m_name = "parse_%s" % i

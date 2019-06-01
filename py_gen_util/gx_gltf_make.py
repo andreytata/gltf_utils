@@ -5,6 +5,7 @@ import sys, weakref, itertools
 
 from gx_gltf_root import *
 
+
 class DagTree(object):
     def __init__(self, gltf):
         # print("++DagTree %X" % id(self))
