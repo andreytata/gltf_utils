@@ -220,7 +220,7 @@ class Buffer(schema.Buffer, GltfNode):
         path = os.path.normpath(path)
         path = os.path.split(path)[0]
         path = os.path.join(path, self.uri)
-        self.buff = file(path, "rb").read()
+        self.buff = open(path, "rb").read()
         return o                            # !return stored overloaded method results
 
 class MeshPrimitive(schema.MeshPrimitive, GltfNode ):
@@ -250,7 +250,7 @@ class Mesh(schema.Mesh, GltfNode):
     
     def gen_shared_joints_0__normal__position__texcoord_0__weights_0(self):
         gltf_name  = self.get_gltf().get_gx_gltf_name()
-        weights_0  = self.primitives[0].get_WEIGTHS_0()
+        weights_0  = self.primitives[0].get_WEIGHTS_0()
         joints_0   = self.primitives[0].get_JOINTS_0()
         texcoord_0 = self.primitives[0].get_TEXCOORD_0()
         normal     = self.primitives[0].get_NORMAL()
@@ -408,8 +408,8 @@ class Gltf(schema.Gltf):
 
 
 if __name__ == '__main__':
-    gltf = Gltf("C:/WORK/EXP61/devicea/gx_gltf_test/BoxTextured.gltf")
-    #gltf = Gltf("C:/work/EXP61/devicea/gx_fbx_test/Nikita.gltf")
+    #gltf = Gltf("C:/WORK/EXP61/devicea/gx_gltf_test/BoxTextured.gltf")
+    gltf = Gltf("C:/work/EXP61/devicea/gx_fbx_test/Nikita.gltf")
     
     for mesh in gltf.meshes:
         vertex_type = ""
